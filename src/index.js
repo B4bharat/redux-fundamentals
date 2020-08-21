@@ -39,3 +39,13 @@ const claimsHistory = (claims = [], action) => {
 
   return claims;
 };
+
+const accounting = (bagOfMoney = 100, action) => {
+  if (action.type === 'CREATE_CLAIM') {
+    return bagOfMoney - action.payload.amountToCollect;
+  } else if (action.type === 'CREATE_POLICY') {
+    return bagOfMoney + action.payload.amount;
+  }
+
+  return bagOfMoney;
+};
