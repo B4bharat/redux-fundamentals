@@ -1,7 +1,7 @@
 {
   "name": "redux-fundamentals",
   "version": "1.0.0",
-  "description": "",
+  "description": "Section 17 of Modern React with Redux [2020]",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
@@ -15,5 +15,7 @@
     "@babel/core": "7.2.0",
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": []
+  "keywords": [
+    "redux"
+  ]
 }
