@@ -49,3 +49,15 @@ const accounting = (bagOfMoney = 100, action) => {
 
   return bagOfMoney;
 };
+
+const policies = (existingPolicies = [], action) => {
+  if (action.type === 'CREATE_POLICY') {
+    return [...existingPolicies, action.payload.name];
+  } else if (action.type === 'DELETE_POLICY') {
+    return existingPolicies.filter((policy) => {
+      return policy !== action.payload.name;
+    });
+  }
+
+  return existingPolicies;
+};
