@@ -32,8 +32,10 @@ const createClaim = (name, amountToCollect) => {
 };
 
 // Reducers (Departments)
-// const claimsHistory = (claims, action) => {
-//   if (action.type === 'CREATE_CLAIM') {
-//     return [...claims, action.payload];
-//   }
-// };
+const claimsHistory = (claims = [], action) => {
+  if (action.type === 'CREATE_CLAIM') {
+    return [...claims, action.payload];
+  }
+
+  return claims;
+};
