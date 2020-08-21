@@ -75,4 +75,9 @@ store.dispatch(createPolicy('Alex', 20));
 store.dispatch(createPolicy('Jim', 30));
 store.dispatch(createPolicy('Bob', 40));
 
+store.dispatch(createClaim('Alex', 100));
+store.dispatch(createClaim('Jim', 50));
+
+store.dispatch(deletePolicy('Bob'));
+
 console.log(store.getState());
