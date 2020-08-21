@@ -1,4 +1,5 @@
-console.clear();
+// console.clear();
+import { createStore, combineReducers } from 'redux';
 
 // Customer dropping off a form (Action Creator)
 const createPolicy = (name, amount) => {
@@ -61,3 +62,17 @@ const policies = (existingPolicies = [], action) => {
 
   return existingPolicies;
 };
+
+const departments = combineReducers({
+  accounting: accounting,
+  claimsHistory: claimsHistory,
+  policies: policies
+});
+
+const store = createStore(departments);
+
+store.dispatch(createPolicy('Alex', 20));
+store.dispatch(createPolicy('Jim', 30));
+store.dispatch(createPolicy('Bob', 40));
+
+console.log(store.getState());
